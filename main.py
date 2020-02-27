@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn.metrics import mean_squared_error
 
 w1 = np.array([[0.15, 0.2], [0.25, 0.3]])
 w2 = np.array([[0.4, 0.45], [0.5, 0.55]])
