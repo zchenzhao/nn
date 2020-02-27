@@ -22,15 +22,7 @@ def forward_pass(x):
     return y_hat
 
 def backward_pass(x, y, y_hat):
-    de_dx = []
-
-    for i in range(len(y)):
-        y_i = y[i]
-        y_hat_i = y_hat[i]
-        de_dx_i = -(y_i - y_hat_i) * (1 - y_hat_i) * y_hat_i
-        de_dx.append(de_dx_i)
-
-    de_dx = np.array(de_dx)
+    de_dx = - (y - y_hat) * (1 - y_hat) * y_hat
     de_dw2 = de_dx.reshape((2, 1))@x.reshape((1, 2))
 
     w2_updated = w2 - learning_rate * de_dw2
